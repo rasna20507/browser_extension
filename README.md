@@ -64,15 +64,15 @@ To run this extension locally in your browser, follow these steps to load it as 
 
 ## Limitations:
 
-Won't work on Chrome system pages (chrome://)
-Limited functionality on sites with strict security policies
-Shadow DOM content may not be selectable on some modern apps
+1. Won't work on Chrome system pages (chrome://)
+2. Limited functionality on sites with strict security policies
+3. Shadow DOM content may not be selectable on some modern apps
 ---
 ## Useful For
-Research papers: save important quotes and definitions
-News articles: mark questions and important points
-Blog reading: collect inspiration and ideas
-General web browsing: organize information
+1. Research papers: save important quotes and definitions
+2. News articles: mark questions and important points
+3. Blog reading: collect inspiration and ideas
+4. General web browsing: organize information
 
 ## Future Ideas
 As we learn more, we hope to add:
