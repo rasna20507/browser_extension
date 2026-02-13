@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 350px;
+      min-height: 400px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    
+    .subtitle {
+      font-size: 11px;
+      opacity: 0.9;
+    }
+    
+    .filters {
+      display: flex;
+      gap: 4px;
+      padding: 10px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      overflow-x: auto;
+    }
+    
+    .filter-btn {
+      flex-shrink: 0;
+      padding: 6px 10px;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+    
+    .filter-btn:hover {
+      transform: translateY(-1px);
+    }
+    
+    .filter-btn.active {
+      border-color: #333;
+    }
+    
+    .filter-all { background: #e0e0e0; }
+    .filter-important { background: #ffd700; }
+    .filter-question { background: #ff6b6b; color: white; }
+    .filter-definition { background: #4ecdc4; }
+    .filter-quote { background: #95e1d3; }
+    
+    .highlights-container {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    
+    .highlight-card {
+      background: white;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-left: 4px solid #ccc;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .highlight-text {
+      font-size: 12px;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    
+    .highlight-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: #666;
+      margin-top: 6px;
+    }
+    
+    .highlight-time {
+      font-style: italic;
+    }
+    
+    .highlight-actions {
+      display: flex;
+      gap: 6px;
+    }
+    
+    .action-btn {
+      padding: 3px 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      background: white;
+      cursor: pointer;
+      font-size: 10px;
+      transition: background 0.2s;
+    }
+    
+    .action-btn:hover {
+      background: #f0f0f0;
+    }
+    
+    .delete-btn {
+      color: #ff4444;
+    }
+    
+    .delete-btn:hover {
+      background: #ffe0e0;
+    }
+    
+    .copy-btn {
+      color: #4CAF50;
+    }
+    
+    .copy-btn:hover {
+      background: #e8f5e9;
+    }
+    
+    .visit-btn {
+      color: #2196F3;
+    }
+    
+    .visit-btn:hover {
+      background: #e3f2fd;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+    }
+    
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    /* Scrollbar styling */
+    .highlights-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .highlights-container::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    .highlights-container::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+    }
+    
+    .highlights-container::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .count-badge {
+      background: rgba(255,255,255,0.3);
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Readpoint</h1>
+    <div class="subtitle">Your saved highlights <span id="totalCount" class="count-badge">0</span></div>
+  </div>
+  
+  <div class="filters">
+    <button class="filter-btn filter-all active" data-filter="all">All</button>
+    <button class="filter-btn filter-important" data-filter="important">Important</button>
+    <button class="filter-btn filter-question" data-filter="question">Questions</button>
+    <button class="filter-btn filter-definition" data-filter="definition">Definitions</button>
+    <button class="filter-btn filter-quote" data-filter="quote">Quotes</button>
+  </div>
+  
+  <div class="highlights-container" id="highlightsContainer">
+    <!-- Highlights will be inserted here by JavaScript -->
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
