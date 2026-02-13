@@ -37,10 +37,10 @@ The extension is made using standard web technologies: **HTML, CSS, and JavaScri
 
 ## Permissions Used
 
-storage: To save and retrieve highlights
-activeTab: To know which page you're on
-scripting: To inject content script on webpages
-tabs: To open new tabs when visiting saved pages
+*storage: To save and retrieve highlights
+*activeTab: To know which page you're on
+*scripting: To inject content script on webpages
+*tabs: To open new tabs when visiting saved pages
 
 ---
 ## Privacy & Data
